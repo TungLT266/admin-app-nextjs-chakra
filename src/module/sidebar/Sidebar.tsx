@@ -11,7 +11,7 @@ import {
   DrawerContent,
   DrawerCloseButton,
 } from '@chakra-ui/react';
-import Content from 'components/sidebar/components/Content';
+import Content from 'module/sidebar/components/Content';
 import {
   renderThumb,
   renderTrack,

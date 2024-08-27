@@ -3,12 +3,12 @@ import { Portal, Box, useDisclosure } from '@chakra-ui/react';
 import Footer from 'components/footer/FooterAdmin';
 // Layout components
 import Navbar from 'components/navbar/NavbarRTL';
-import Sidebar from 'components/sidebar/Sidebar';
+import Sidebar from 'module/sidebar/Sidebar';
 import { RtlProvider } from 'components/rtlProvider/RtlProvider';
-import { SidebarContext } from 'contexts/SidebarContext';
 import { PropsWithChildren, useEffect, useState } from 'react';
 import routes from 'routes';
 import { getActiveNavbar, getActiveNavbarText, getActiveRoute, isWindowAvailable } from 'utils/navigation';
+import { SidebarContext } from 'shared/context/SidebarContext';
 
 interface RTLLayoutProps extends PropsWithChildren {}
 
