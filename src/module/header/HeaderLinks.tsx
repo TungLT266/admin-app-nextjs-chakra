@@ -1,5 +1,5 @@
 'use client';
-// Chakra Imports
+
 import {
   Box,
   Button,
@@ -26,6 +26,7 @@ import { IoMdMoon, IoMdSunny } from 'react-icons/io';
 import { MdInfoOutline, MdNotificationsNone } from 'react-icons/md';
 import routes from 'module/sidebar/routes';
 import { SidebarResponsive } from 'module/sidebar/components/Sidebar';
+
 export default function HeaderLinks(props: {
   secondary: boolean;
   onOpen: boolean | any;
@@ -59,16 +60,6 @@ export default function HeaderLinks(props: {
       borderRadius="30px"
       boxShadow={shadow}
     >
-      <SearchBar
-        mb={() => {
-          if (secondary) {
-            return { base: '10px', md: 'unset' };
-          }
-          return 'unset';
-        }}
-        me="10px"
-        borderRadius="30px"
-      />
       <Flex
         bg={ethBg}
         display={secondary ? 'flex' : 'none'}

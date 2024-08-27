@@ -5,22 +5,16 @@ import {
   BreadcrumbLink,
   Flex,
   Link,
-  Text,
-  useColorModeValue
+  useColorModeValue,
+  useDisclosure
 } from '@chakra-ui/react'
 import { useState, useEffect } from 'react'
-import AdminNavbarLinks from 'components/navbar/NavbarLinksAdmin'
-import { isWindowAvailable } from 'utils/navigation'
+import { getActiveNavbar, getActiveRoute, isWindowAvailable } from 'utils/navigation'
+import HeaderLinks from './HeaderLinks';
 
-export default function AdminNavbar (props: {
-  secondary: boolean
-  message: string | boolean
-  brandText: string
-  logoText: string
-  fixed: boolean
-  onOpen: (...args: any[]) => any
-}) {
+export default function AdminNavbar () {
   const [scrolled, setScrolled] = useState(false)
+  const { onOpen } = useDisclosure();
 
   useEffect(() => {
     if (isWindowAvailable()) {
@@ -33,7 +27,8 @@ export default function AdminNavbar (props: {
     }
   })
 
-  const { secondary, message, brandText } = props
+  const brandText = getActiveRoute()
+  const secondary = getActiveNavbar()
 
   // Here are all the props that may change depending on navbar's type or state.(secondary, variant, scrolled)
   let mainText = useColorModeValue('navy.700', 'white')
@@ -112,7 +107,7 @@ export default function AdminNavbar (props: {
       >
         <Box mb={{ sm: '8px', md: '0px' }}>
           <Breadcrumb>
-            <BreadcrumbItem color={secondaryText} fontSize='sm' mb='5px'>
+            <BreadcrumbItem color={secondaryText} fontSize='sm' mb='px'>
               <BreadcrumbLink href='#' color={secondaryText}>
                 Pages
               </BreadcrumbLink>
@@ -122,9 +117,8 @@ export default function AdminNavbar (props: {
               <BreadcrumbLink href='#' color={secondaryText}>
                 {brandText}
               </BreadcrumbLink>
-            </BreadcrumbItem>
+            </BreadcrumbItem> 
           </Breadcrumb>
-          {/* Here we create navbar brand, based on route name */}
           <Link
             color={mainText}
             href='#'
@@ -146,10 +140,10 @@ export default function AdminNavbar (props: {
           </Link>
         </Box>
         <Box ms='auto' w={{ sm: '100%', md: 'unset' }}>
-          <AdminNavbarLinks
-            onOpen={props.onOpen}
-            secondary={props.secondary}
-            fixed={props.fixed}
+          <HeaderLinks
+            onOpen={onOpen}
+            secondary={secondary}
+            fixed={false}
           />
         </Box>
       </Flex> 

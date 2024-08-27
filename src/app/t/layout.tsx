@@ -1,36 +1,18 @@
 'use client';
 
 import {
-  Portal,
   Box,
-  useDisclosure,
   useColorModeValue,
 } from '@chakra-ui/react';
 import Footer from 'components/footer/FooterAdmin';
-// Layout components
-import Navbar from 'components/navbar/NavbarAdmin';
+import Header from 'module/header/Header';
 import Sidebar from 'module/sidebar/components/Sidebar';
-import routes from 'module/sidebar/routes';
 import { PropsWithChildren, useEffect, useState } from 'react';
 import { SidebarContext } from 'shared/context/SidebarContext';
-import {
-  getActiveNavbar,
-  getActiveNavbarText,
-  getActiveRoute,
-} from 'utils/navigation';
 
-interface DashboardLayoutProps extends PropsWithChildren {
-  [x: string]: any;
-}
-
-// Custom Chakra theme
-export default function AdminLayout(props: DashboardLayoutProps) {
-  const { children, ...rest } = props;
-  // states and functions
-  const [fixed] = useState(false);
+export default function AdminLayout(props: PropsWithChildren) {
+  const { children } = props;
   const [toggleSidebar, setToggleSidebar] = useState(false);
-  // functions for changing the states from components
-  const { onOpen } = useDisclosure();
 
   useEffect(() => {
     window.document.documentElement.dir = 'ltr';
@@ -61,19 +43,7 @@ export default function AdminLayout(props: DashboardLayoutProps) {
           transitionProperty="top, bottom, width"
           transitionTimingFunction="linear, linear, ease"
         >
-          <Portal>
-            <Box>
-              <Navbar
-                onOpen={onOpen}
-                logoText={'Horizon UI Dashboard PRO'}
-                brandText={getActiveRoute(routes)}
-                secondary={getActiveNavbar(routes)}
-                message={getActiveNavbarText(routes)}
-                fixed={fixed}
-                {...rest}
-              />
-            </Box>
-          </Portal>
+          <Header/>
 
           <Box
             mx="auto"
