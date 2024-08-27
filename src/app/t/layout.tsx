@@ -9,9 +9,9 @@ import {
 import Footer from 'components/footer/FooterAdmin';
 // Layout components
 import Navbar from 'components/navbar/NavbarAdmin';
-import Sidebar from 'module/sidebar/Sidebar';
+import Sidebar from 'module/sidebar/components/Sidebar';
+import routes from 'module/sidebar/routes';
 import { PropsWithChildren, useEffect, useState } from 'react';
-import routes from 'routes';
 import { SidebarContext } from 'shared/context/SidebarContext';
 import {
   getActiveNavbar,
@@ -46,7 +46,7 @@ export default function AdminLayout(props: DashboardLayoutProps) {
           setToggleSidebar,
         }}
       >
-        <Sidebar routes={routes} display="none" {...rest} />
+        <Sidebar />
         <Box
           float="right"
           minHeight="100vh"

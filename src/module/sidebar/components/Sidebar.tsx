@@ -28,13 +28,7 @@ interface SidebarResponsiveProps {
   routes: IRoute[];
 }
 
-interface SidebarProps extends SidebarResponsiveProps {
-  [x: string]: any;
-}
-
-function Sidebar(props: SidebarProps) {
-  const { routes } = props;
-
+function Sidebar() {
   let variantChange = '0.2s linear';
   let shadow = useColorModeValue(
     '14px 17px 40px 4px rgba(112, 144, 176, 0.08)',
@@ -63,7 +57,7 @@ function Sidebar(props: SidebarProps) {
           renderThumbVertical={renderThumb}
           renderView={renderView}
         >
-          <Content routes={routes} />
+          <Content />
         </Scrollbars>
       </Box>
     </Box>
@@ -121,7 +115,7 @@ export function SidebarResponsive(props: SidebarResponsiveProps) {
               renderThumbVertical={renderThumb}
               renderView={renderView}
             >
-              <Content routes={routes} />
+              <Content />
             </Scrollbars>
           </DrawerBody>
         </DrawerContent>

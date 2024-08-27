@@ -19,13 +19,13 @@ import {
 // Custom Components
 import { ItemContent } from 'components/menu/ItemContent';
 import { SearchBar } from 'components/navbar/searchBar/SearchBar';
-import { SidebarResponsive } from 'module/sidebar/Sidebar';
 // Assets
 import navImage from '/public/img/layout/Navbar.png';
 import { FaEthereum } from 'react-icons/fa';
 import { IoMdMoon, IoMdSunny } from 'react-icons/io';
 import { MdInfoOutline, MdNotificationsNone } from 'react-icons/md';
-import routes from 'routes';
+import routes from 'module/sidebar/routes';
+import { SidebarResponsive } from 'module/sidebar/components/Sidebar';
 export default function HeaderLinks(props: {
   secondary: boolean;
   onOpen: boolean | any;
