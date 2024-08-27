@@ -1,6 +1,4 @@
 import React from 'react';
-
-// chakra imports
 import {
   Box,
   Flex,
@@ -59,7 +57,6 @@ function Sidebar(props: SidebarProps) {
         overflowX="hidden"
         boxShadow={shadow}
       >
-        {/* @ts-expect-error */}
         <Scrollbars
           autoHide
           renderTrackVertical={renderTrack}
@@ -118,7 +115,6 @@ export function SidebarResponsive(props: SidebarResponsiveProps) {
             _hover={{ boxShadow: 'none' }}
           />
           <DrawerBody maxW="285px" px="0rem" pb="0">
-            {/* @ts-expect-error */}
             <Scrollbars
               autoHide
               renderTrackVertical={renderTrack}

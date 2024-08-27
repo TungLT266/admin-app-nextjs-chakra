@@ -1,5 +1,3 @@
-/* eslint-disable */
-// Chakra Imports
 import {
   Box,
   Breadcrumb,
