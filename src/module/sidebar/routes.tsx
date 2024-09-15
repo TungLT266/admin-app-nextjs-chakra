@@ -1,9 +1,9 @@
 import { Icon } from '@chakra-ui/react';
 import { MdHome } from 'react-icons/md';
 
-import { IRoute } from 'types/navigation';
+// import { IRoute } from 'types/navigation';
 
-const routes: IRoute[] = [
+const routes: any[] = [
   {
     name: 'Main Dashboard',
     path: '/t',

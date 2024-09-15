@@ -3,10 +3,10 @@ import { Portal, Box, useDisclosure } from '@chakra-ui/react';
 import Footer from 'components/footer/FooterAdmin';
 // Layout components
 import Navbar from 'components/navbar/NavbarRTL';
-import Sidebar from 'module/sidebar/Sidebar';
+// import Sidebar from 'module/sidebar/Sidebar';
 import { RtlProvider } from 'components/rtlProvider/RtlProvider';
 import { PropsWithChildren, useEffect, useState } from 'react';
-import routes from 'routes';
+// import routes from 'routes';
 import { getActiveNavbar, getActiveNavbarText, getActiveRoute, isWindowAvailable } from 'utils/navigation';
 import { SidebarContext } from 'shared/context/SidebarContext';
 
@@ -32,7 +32,7 @@ export default function RTLLayout(props: RTLLayoutProps) {
 						toggleSidebar,
 						setToggleSidebar
 					}}>
-					<Sidebar routes={routes} display='none' {...rest} />
+					{/* <Sidebar routes={routes} display='none' {...rest} /> */}
 					<Box
 						float='left'
 						minHeight='100vh'
@@ -48,7 +48,7 @@ export default function RTLLayout(props: RTLLayoutProps) {
 						transitionTimingFunction='linear, linear, ease'>
 						<Portal>
 							<Box>
-								<Navbar
+								{/* <Navbar
 									onOpen={onOpen}
 									logoText={'Horizon UI Dashboard'}
 									brandText={getActiveRoute(routes)}
@@ -56,7 +56,7 @@ export default function RTLLayout(props: RTLLayoutProps) {
 									message={getActiveNavbarText(routes)}
 									fixed={fixed}
 									{...rest}
-								/>
+								/> */}
 							</Box>
 						</Portal>
 
